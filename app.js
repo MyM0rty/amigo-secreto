@@ -5,21 +5,26 @@ function agregarAmigo() {
 
     if (nombres.trim().length === 0) { 
         alert('Por favor, inserte un nombre.');
+    } else if (nombresAmigos.includes(nombres)) { // Verificar si el nombre ya existe
+        alert('Este nombre ya ha sido agregado.');
     } else {
-        nombresAmigos.push(nombres); 
+        nombresAmigos.push(nombres); // Agrega el nombre al array
         console.log(nombresAmigos); 
         mostrarNombres(); // Llama a la función para mostrar los nombres
+        document.getElementById("nombresAmigos").value = ""; // Restablece el campo de texto a una cadena vacía
     }
 }
 
 function mostrarNombres() {
-    let lista = document.getElementById("listaAmigos"); // Asegúrate de tener un elemento con este ID
-    lista.innerHTML = ""; // Limpia la lista antes de agregar los nuevos nombres
-    nombresAmigos.forEach(nombre => {
-        let li = document.createElement("li"); // Crea un nuevo elemento de lista
-        li.textContent = nombre; // Establece el texto del elemento
-        lista.appendChild(li); // Agrega el elemento a la lista
-    });
+    let lista = document.getElementById("listaAmigos"); 
+    lista.innerHTML = ""; // Limpiar la lista existente para evitar duplicados
+
+    // Usar un bucle for para recorrer el arreglo
+    for (let i = 0; i < nombresAmigos.length; i++) {
+        let li = document.createElement("li"); // Crear un nuevo elemento de lista
+        li.textContent = nombresAmigos[i]; // Establecer el texto del elemento
+        lista.appendChild(li); // Agregar el elemento a la lista
+    }
 }
-    
+
 
