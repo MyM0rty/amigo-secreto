@@ -36,4 +36,7 @@ Actualiza la lista visible de amigos.
 Si todos los amigos han sido sorteados, reinicia la lista de amigos sorteados y muestra una alerta.
 Evento de Teclado (comentado):
 
-Hay un código comentado que permite agregar un amigo al presionar la tecla "Enter" agregado para agilizar el teste de el código
+A modo de comodidad personal...
+Hay un código comentado que permite agregar un amigo al presionar la tecla "Enter" agregado para agilizar el teste de el código, tambien agrege 
+//let nombreValido = /^[A-Za-záéíóúÁÉÍÓÚñÑ\s]+$/;
+para comprobar si el nombre ingresado es válido. Si no lo es (es decir, si contiene números o caracteres no permitidos), se muestra una alerta indicando que solo se deben ingresar letras y espacios.
